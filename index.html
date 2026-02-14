@@ -1,121 +1,99 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>Happy Valentine Day 💖</title>
+  <meta charset="UTF-8">
+  <title>Happy Valentine Day 💖</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<style>
-  body {
-    margin: 0;
-    height: 100vh;
-    background: linear-gradient(135deg, #ff416c, #ff4b2b);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-family: Arial, sans-serif;
-    overflow: hidden;
-  }
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      background: linear-gradient(135deg, #ffb6c1, #ffc0cb);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: Arial, sans-serif;
+    }
 
-  .card {
-    background: white;
-    padding: 25px;
-    border-radius: 20px;
-    text-align: center;
-    width: 300px;
-    box-shadow: 0 20px 40px rgba(0,0,0,0.3);
-    position: relative;
-  }
+    .card {
+      background: white;
+      padding: 25px;
+      border-radius: 20px;
+      text-align: center;
+      width: 320px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    }
 
-  h1 {
-    color: #ff2f68;
-    font-size: 20px;
-  }
+    h1 {
+      color: #ff4d6d;
+      margin-bottom: 10px;
+    }
 
-  p {
-    font-size: 14px;
-    color: #333;
-  }
+    p {
+      color: #333;
+      font-size: 16px;
+    }
 
-  button {
-    border: none;
-    padding: 10px 22px;
-    margin: 10px;
-    border-radius: 25px;
-    cursor: pointer;
-    font-size: 14px;
-  }
+    .buttons {
+      margin-top: 20px;
+    }
 
-  #yesBtn {
-    background: #ff2f68;
-    color: white;
-  }
+    button {
+      padding: 10px 18px;
+      border: none;
+      border-radius: 25px;
+      font-size: 16px;
+      cursor: pointer;
+      margin: 5px;
+    }
 
-  #noBtn {
-    background: #eee;
-    position: absolute;
-  }
+    .yes {
+      background: #ff4d6d;
+      color: white;
+    }
 
-  .note {
-    cursor: pointer;
-    background: #ffe6ec;
-    padding: 15px;
-    border-radius: 15px;
-    margin-top: 15px;
-    animation: pulse 1s infinite alternate;
-  }
+    .no {
+      background: #ddd;
+    }
 
-  @keyframes pulse {
-    from { transform: scale(1); }
-    to { transform: scale(1.05); }
-  }
-
-  img {
-    width: 100%;
-    border-radius: 15px;
-    margin-top: 15px;
-    display: none;
-  }
-</style>
+    img {
+      margin-top: 15px;
+      width: 100%;
+      max-width: 250px;
+      border-radius: 15px;
+      display: none;
+    }
+  </style>
 </head>
 
 <body>
 
-<div class="card" id="card">
-  <h1>Hey 💖 Avni 😘</h1>
-  <p>Today is Valentine’s Day 💕</p>
-  <p><strong>Will you be my Valentine? 💝</strong></p>
+  <div class="card" id="card">
+    <h1>Hey 💖 Avni 😘</h1>
+    <p>Will you be my Valentine? 💌</p>
 
-  <button id="yesBtn">Yes 💖</button>
-  <button id="noBtn">No 😜</button>
-</div>
+    <div class="buttons">
+      <button class="yes" onclick="yesClicked()">Yes 💕</button>
+      <button class="no" onclick="noClicked()">No 😜</button>
+    </div>
 
-<script>
-  const yesBtn = document.getElementById("yesBtn");
-  const noBtn = document.getElementById("noBtn");
-  const card = document.getElementById("card");
+    <p id="message"></p>
+    <img id="photo" src="avni.jpg" alt="Avni Photo">
+  </div>
 
-  noBtn.onmouseover = () => {
-    noBtn.style.left = Math.random() * 230 + "px";
-    noBtn.style.top = Math.random() * 230 + "px";
-  };
+  <script>
+    function yesClicked() {
+      document.getElementById("message").innerHTML =
+        "Happy Valentine Day Avni ❤️<br>You make my life special 💖";
+      document.getElementById("photo").style.display = "block";
+    }
 
-  yesBtn.onclick = () => {
-    card.innerHTML = `
-      <h1>💘 Happy Valentine Day Avni 💘</h1>
-      <p>You just made my day special 😘</p>
-
-      <div class="note" onclick="showPhoto()">
-        💌 Tap this Valentine Note 💌
-      </div>
-
-      <img id="photo" src="your-photo.jpg" alt="Valentine Photo">
-    `;
-  };
-
-  function showPhoto() {
-    document.getElementById("photo").style.display = "block";
-  }
-</script>
+    function noClicked() {
+      alert("Soch lo phir se 😜❤️");
+    }
+  </script>
 
 </body>
 </html>
